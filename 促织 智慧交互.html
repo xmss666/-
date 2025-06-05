@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《促织》深度解读：权力异化与人虫易位</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B4513; /* 古典棕 */
+            --secondary: #CD5C5C; /* 朱砂红 */
+            --accent: #556B2F; /* 竹青色 */
+            --light: #F5F5DC; /* 宣纸色 */
+            --dark: #2F4F4F; /* 墨色 */
+        }
+        
+        body {
+            background: #f9f3e9 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f9f3e9"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23e8dfca" stroke-width="0.5"/></svg>');
+            font-family: 'Noto Serif SC', serif;
+            color: var(--dark);
+        }
+        
+        .reveal {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slides {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .slide-container {
+            background: rgba(249, 243, 233, 0.92);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .slide-container:before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            pointer-events: none;
+            border-radius: 4px;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: var(--primary);
+            font-family: 'Ma Shan Zheng', cursive;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+            padding-bottom: 15px;
+            position: relative;
+            margin-top: 0;
+        }
+        
+        h1:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+        
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        p {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        
+        .focus-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent);
+            transition: all 0.4s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .focus-card:before {
+            content: "“";
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 4rem;
+            color: rgba(139, 69, 19, 0.1);
+            font-family: 'Ma Shan Zheng', cursive;
+            line-height: 1;
+        }
+        
+        .focus-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+        }
+        
+        .keyword {
+            color: var(--secondary);
+            font-weight: 700;
+            position: relative;
+            padding: 0 2px;
+        }
+        
+        .keyword:after {
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(205, 92, 92, 0.3);
+        }
+        
+        .teacher-tip {
+            background: rgba(245, 245, 220, 0.95);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            display: none;
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            font-size: 1.6rem;
+            position: relative;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .teacher-tip:before {
+            content: "师曰：";
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: var(--accent);
+            color: white;
+            font-size: 1.4rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .show-tip {
+            display: block;
+            animation: fadeIn 0.6s ease;
+        }
+        
+        .question-box {
+            background: rgba(245, 245, 220, 0.7);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px dashed rgba(139, 69, 19, 0.3);
+            text-align: center;
+            position: relative;
+        }
+        
+        .question-box:hover {
+            background: rgba(245, 245, 220, 0.9);
+            border: 1px dashed var(--secondary);
+        }
+        
+        .human-insect-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+            gap: 20px;
+            height: 220px;
+        }
+        
+        .human-card, .insect-card {
+            flex: 1;
+            height: 100%;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+        }
+        
+        .human-card:before, .insect-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        .human-card h3, .insect-card h3 {
+            font-size: 2.0rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .human-card p, .insect-card p {
+            font-size: 1.6rem;
+            margin: 5px 0;
+        }
+        
+        .comparison-arrow {
+            font-size: 3rem;
+            color: var(--accent);
+            animation: pulse 2s infinite;
+        }
+        
+        .power-chain {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            margin: 20px 0;
+        }
+        
+        .power-level {
+            text-align: center;
+            padding: 15px 10px;
+            border-radius: 8px;
+            width: 23%;
+            background: white;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(139, 69, 19, 0.1);
+        }
+        
+        .power-level:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .power-level:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+        }
+        
+        .power-level h4 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .quote-box {
+            border-left: 3px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            font-style: italic;
+        }
+        
+        .quote-box:before {
+            content: "“";
+            position: absolute;
+            top: -15px;
+            left: 10px;
+            font-size: 5rem;
+            color: rgba(139, 69, 19, 0.15);
+            font-family: 'Ma Shan Zheng', cursive;
+            line-height: 1;
+        }
+        
+        .fragment {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        
+        .fragment.visible {
+            opacity: 1;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .section-title {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            display: inline-block;
+            padding: 0 30px 10px;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            position: relative;
+            height: 100px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+            z-index: 1;
+        }
+        
+        .timeline-point {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 100px;
+        }
+        
+        .timeline-point .dot {
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        .timeline-point p {
+            font-size: 1.5rem;
+            margin: 8px 0 0;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 5px;
+            border-radius: 6px;
+        }
+        
+        .footer-note {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 1.3rem;
+            color: rgba(47, 79, 79, 0.7);
+        }
+        
+        .banner {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 1.4rem;
+            z-index: 10;
+        }
+        
+        .page-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+        
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .decoration.tl {
+            top: 20px;
+            left: 20px;
+            border-top: 2px solid var(--primary);
+            border-left: 2px solid var(--primary);
+        }
+        
+        .decoration.br {
+            bottom: 20px;
+            right: 20px;
+            border-bottom: 2px solid var(--primary);
+            border-right: 2px solid var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- 封面页 -->
+            <section>
+                <div class="slide-container" style="justify-content: center; text-align: center;">
+                    <div class="decoration tl"></div>
+                    <div class="decoration br"></div>
+                    <div class="banner">文言经典解构</div>
+                    
+                    <div style="margin-bottom: 30px; position: relative;">
+                        <div style="font-size: 8rem; color: var(--primary); margin-bottom: 15px; line-height: 1;">🦗</div>
+                        <h1>促织</h1>
+                        <h3 style="color: var(--dark); font-weight: 400; margin-top: 10px;">蒲松龄 · 聊斋志异</h3>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <p style="font-size: 1.8rem; letter-spacing: 2px;">权力迷局与人性异化</p>
+                        <div style="display: flex; justify-content: center; gap: 15px; margin-top: 25px;">
+                            <div style="background: rgba(139, 69, 19, 0.1); padding: 8px 18px; border-radius: 30px; font-size: 1.5rem;">
+                                <i class="fas fa-book"></i> 古典文学解构
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-note">
+                        使用方向键导航 | 空格键展开内容 | 叶老智慧课件
+                    </div>
+                    <div class="page-indicator">封面</div>
+                </div>
+            </section>
+
+            <!-- 导入：名字的荒诞 -->
+            <section>
+                <div class="slide-container">
+                    <div class="page-indicator">导入</div>
+                    <div class="section-title">
+                        <h2><i class="fas fa-signature"></i> 名字的荒诞反讽</h2>
+                    </div>
+                    
+                    <div class="focus-card">
+                        <p><span class="keyword">"成名"</span>的本义：功成名就的期许</p>
+                        <div class="timeline">
+                            <div class="timeline-point">
+                                <div class="dot"></div>
+                                <p>起点</p>
+                                <p class="fragment">"操童子业，久不售"</p>
+                            </div>
+                            <div class="timeline-point">
+                                <div class="dot"></div>
+                                <p>转折</p>
+                                <p class="fragment">子魂化虫</p>
+                            </div>
+                            <div class="timeline-point">
+                                <div class="dot"></div>
+                                <p>终点</p>
+                                <p class="fragment">"裘马过世家"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-box">
+                        <p><i class="fas fa-question-circle"></i> <strong>命运巨变的关键是什么？</strong></p>
+                        <div class="teacher-tip">
+                            <p>儿子魂化的促织成为阶级跃迁的荒诞媒介，名字的期许与实现方式的撕裂构成核心反讽。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="focus-card" style="border-left-color: var(--secondary);">
+                        <h4><i class="fas fa-scale-balanced"></i> 核心矛盾</h4>
+                        <p>一<span class="keyword">虫</span>何以倾<span class="keyword">人</span>？</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 环节一：荒诞之源 -->
+            <section>
+                <section>
+                    <div class="slide-container">
+                        <div class="page-indicator">环节一 · 上</div>
+                        <div class="section-title">
+                            <h2><i class="fas fa-seedling"></i> 荒诞之源</h2>
+                            <p>权力系统的结构性扭曲</p>
+                        </div>
+                        
+                        <div class="power-chain">
+                            <div class="power-level">
+                                <div class="icon"><i class="fas fa-crown"></i></div>
+                                <h4>宫中</h4>
+                                <p><span class="keyword">"尚促织之戏"</span></p>
+                                <p class="fragment">娱乐需求</p>
+                            </div>
+                            <div class="power-level">
+                                <div class="icon"><i class="fas fa-user-tie"></i></div>
+                                <h4>县令</h4>
+                                <p><span class="keyword">"欲媚上官"</span></p>
+                                <p class="fragment">政治投机</p>
+                            </div>
+                            <div class="power-level">
+                                <div class="icon"><i class="fas fa-user-ninja"></i></div>
+                                <h4>里胥</h4>
+                                <p><span class="keyword">"假此科敛"</span></p>
+                                <p class="fragment">权力寻租</p>
+                            </div>
+                            <div class="power-level">
+                                <div class="icon"><i class="fas fa-people-carry-box"></i></div>
+                                <h4>百姓</h4>
+                                <p><span class="keyword">"倾数家之产"</span></p>
+                                <p class="fragment">生存代价</p>
+                            </div>
+                        </div>
+                        
+                        <div class="quote-box">
+                            <p>"宫中尚促织之戏，岁征民间"</p>
+                            <p>"此物故非西产...因责常供"</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <div class="slide-container">
+                        <div class="page-indicator">环节一 · 下</div>
+                        <div class="section-title">
+                            <h2><i class="fas fa-sitemap"></i> 权力解构</h2>
+                        </div>
+                        
+                        <div class="focus-card">
+                            <h4><i class="fas fa-crown"></i> 宫中 → 民间</h4>
+                            <p><span class="keyword">"戏"</span> → <span class="keyword">"岁征"</span></p>
+                            <div class="question-box">
+                                <p><i class="fas fa-question"></i> 皇权如何转化压迫？</p>
+                                <div class="teacher-tip">
+                                    <p>帝王个人喜好无需转化机制即可成为民间制度性负担，体现绝对权力的非理性特征。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="focus-card">
+                            <h4><i class="fas fa-map-marked-alt"></i> 非产地 → 常供</h4>
+                            <p><span class="keyword">"此物故非西产"</span> → <span class="keyword">"因责常供"</span></p>
+                            <div class="question-box">
+                                <p><i class="fas fa-question"></i> 现实逻辑如何被扭曲？</p>
+                                <div class="teacher-tip">
+                                    <p>政治投机碾压客观现实，"责"字暴露责任转嫁机制与官僚系统的扭曲运行规则。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="focus-card">
+                            <h4><i class="fas fa-scale-balanced"></i> 虫价 → 人命</h4>
+                            <p><span class="keyword">"每责一头，辄倾数家之产"</span></p>
+                            <div class="question-box">
+                                <p><i class="fas fa-question"></i> 价值体系如何颠覆？</p>
+                                <div class="teacher-tip">
+                                    <p>娱乐玩物的成本由底层生命承担，暴露系统的剥削本质。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- 环节二：成名之殇 -->
+            <section>
+                <section>
+                    <div class="slide-container">
+                        <div class="page-indicator">环节二 · 上</div>
+                        <div class="section-title">
+                            <h2><i class="fas fa-person-rays"></i> 成名之殇</h2>
+                            <p>善良者的结构性困境</p>
+                        </div>
+                        
+                        <div class="focus-card">
+                            <h4><i class="fas fa-mask"></i> 性格困境</h4>
+                            <p><span class="keyword">"为人迂讷"</span> → <span class="keyword">"猾胥报充里正役"</span></p>
+                            <div class="question-box">
+                                <p><i class="fas fa-question"></i> 系统如何筛选人群？</p>
+                                <div class="teacher-tip">
+                                    <p>官僚机器精准识别并剥削老实人，善良成为系统中的致命弱点。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="focus-card">
+                            <h4><i class="fas fa-hands-holding-heart"></i> 道德困境</h4>
+                            <p><span class="keyword">"不敢敛户口"</span> → <span class="keyword">"无所赔偿"</span></p>
+                            <div class="question-box">
+                                <p><i class="fas fa-question"></i> 道德在系统中的角色？</p>
+                                <div class="teacher-tip">
+                                    <p>良知成为压迫工具，道德感迫使个体承受系统性荒谬，加速自身毁灭。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <div class="slide-container">
+                        <div class="page-indicator">环节二 · 下</div>
+                        <div class="section-title">
+                            <h2><i class="fas fa-hourglass-half"></i> 努力悖论</h2>
+                        </div>
+                        
+                        <div class="focus-card">
+                            <h4><i class="fas fa-running"></i> 勤勉之困</h4>
+                            <p><span class="keyword">"早出暮归，靡计不施"</span> → <span class="keyword">"迄无济"</span></p>
+                            <div class="question-box">
+                                <p><i class="fas fa-question"></i> 努力为何无效？</p>
+                                <div class="teacher-tip">
+                                    <p>方法得当却因"非产地"客观限制注定失败，揭示系统本身的荒谬性。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="focus-card">
+                            <h4><i class="fas fa-skull"></i> 终极代价</h4>
+                            <p><span class="keyword">"严限追比"</span> → <span class="keyword">"惟思自尽"</span></p>
+                            <div class="question-box">
+                                <p><i class="fas fa-question"></i> 系统暴力如何运作？</p>
+                                <div class="teacher-tip">
+                                    <p>官僚机器用肉体刑罚惩罚"任务失败者"，善良勤勉反成催命符。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quote-box">
+                            <p>"遂为猾胥报充里正役，百计营谋不能脱"</p>
+                            <p>"转侧床头，惟思自尽"</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- 环节三：荒诞之巅 -->
+            <section>
+                <section>
+                    <div class="slide-container">
+                        <div class="page-indicator">环节三 · 上</div>
+                        <div class="section-title">
+                            <h2><i class="fas fa-exchange-alt"></i> 人虫易位</h2>
+                            <p>价值的彻底颠覆</p>
+                        </div>
+                        
+                        <div class="human-insect-container">
+                            <div class="human-card">
+                                <h3><i class="fas fa-child"></i> 儿子</h3>
+                                <p class="fragment">"神气痴木"</p>
+                                <p class="fragment">"奄奄思睡"</p>
+                                <p class="fragment">"身化促织"</p>
+                            </div>
+                            
+                            <div class="comparison-arrow">
+                                <i class="fas fa-arrows-alt-h"></i>
+                            </div>
+                            
+                            <div class="insect-card">
+                                <h3><i class="fas fa-bug"></i> 魂化促织</h3>
+                                <p class="fragment">"直龁敌领"</p>
+                                <p class="fragment">"力叮不释"</p>
+                                <p class="fragment">"裘马过世家"</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <div class="slide-container">
+                        <div class="page-indicator">环节三 · 下</div>
+                        <div class="section-title">
+                            <h2><i class="fas fa-heart-broken"></i> 人性异化</h2>
+                        </div>
+                        
+                        <div class="focus-card">
+                            <h4><i class="fas fa-heart-crack"></i> 亲情让位</h4>
+                            <p>儿投井 → <span class="keyword">"不复以儿为念"</span></p>
+                            <div class="question-box">
+                                <p><i class="fas fa-question"></i> 生存压力如何扭曲人性？</p>
+                                <div class="teacher-tip">
+                                    <p>虫笼的空虚压倒重伤的儿子，生存焦虑碾碎最基本的人伦亲情。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="focus-card">
+                            <h4><i class="fas fa-arrows-rotate"></i> 价值反转</h4>
+                            <p>对虫：<span class="keyword">"劣之"</span> → <span class="keyword">"大喜"</span></p>
+                            <div class="question-box">
+                                <p><i class="fas fa-question"></i> 价值体系如何颠覆？</p>
+                                <div class="teacher-tip">
+                                    <p>为儿子魂魄化成的工具狂喜，人的价值＜虫的工具价值。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- 环节四：溯源之问 -->
+            <section>
+                <div class="slide-container">
+                    <div class="page-indicator">环节四</div>
+                    <div class="section-title">
+                        <h2><i class="fas fa-search"></i> 溯源之问</h2>
+                        <p>异史氏曰的系统批判</p>
+                    </div>
+                    
+                    <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+                        <div class="quote-box" style="font-size: 2.0rem;">
+                            <p>"天子偶用一物，未必不过此已忘；</p>
+                            <p>而奉行者即为定例...</p>
+                            <p><span class="keyword" style="font-size: 2.2rem;">民日贴妇卖儿，更无休止</span>"</p>
+                            <footer style="text-align: right; margin-top: 20px; font-size: 1.8rem;">—— 异史氏曰</footer>
+                        </div>
+                    </div>
+                    
+                    <div class="focus-card">
+                        <h4><i class="fas fa-infinity"></i> 系统闭环</h4>
+                        <div class="power-chain">
+                            <div class="power-level">
+                                <h4>根源</h4>
+                                <p>皇权<span class="keyword">任性</span></p>
+                            </div>
+                            <div class="power-level">
+                                <h4>放大器</h4>
+                                <p>官僚<span class="keyword">贪虐</span></p>
+                            </div>
+                            <div class="power-level">
+                                <h4>承受者</h4>
+                                <p>民众<span class="keyword">贴妇卖儿</span></p>
+                            </div>
+                            <div class="power-level">
+                                <h4>闭环</h4>
+                                <p>压迫者<span class="keyword">受恩荫</span></p>
+                            </div>
+                        </div>
+                        <div class="teacher-tip">
+                            <p>成名遭遇是权力结构的必然产物，子魂化虫是制度化压迫的终极隐喻。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 结课升华 -->
+            <section>
+                <div class="slide-container" style="justify-content: center; text-align: center;">
+                    <div class="decoration tl"></div>
+                    <div class="decoration br"></div>
+                    <div class="banner">古典文学启示</div>
+                    
+                    <div style="max-width: 900px; margin: 0 auto;">
+                        <div style="font-size: 4rem; color: var(--primary); margin-bottom: 20px;">📜</div>
+                        <h2 style="border-bottom: none; font-size: 3.2rem;">警世恒言</h2>
+                        
+                        <div style="background: rgba(255, 255, 255, 0.7); padding: 30px; border-radius: 8px; margin: 30px 0; position: relative;">
+                            <p style="font-size: 2.2rem; line-height: 1.8;">
+                                一<span class="keyword">虫</span>倾<span class="keyword">人</span>伦<br>
+                                权<span class="keyword">戏</span>化民<span class="keyword">殇</span><br>
+                                异<span class="keyword">史</span>揭<span class="keyword">真</span>相<br>
+                                千<span class="keyword">载</span>警<span class="keyword">世</span>长
+                            </p>
+                            <div style="height: 2px; background: var(--accent); margin: 25px 0;"></div>
+                            <p style="font-size: 1.8rem; font-style: italic; margin-top: 20px;">
+                                魔幻为表，现实为里<br>
+                                ——权力不受制，人将不为人
+                            </p>
+                        </div>
+                        
+                        
+
+    <script>
+        Reveal.initialize({
+            plugins: [RevealNotes],
+            hash: true,
+            transition: 'convex',
+            pdfSeparateFragments: false,
+            width: 1600,
+            height: 900,
+            margin: 0.04,
+            showNotes: true
+        });
+
+        // 动态显示教学点拨
+        document.querySelectorAll('.question-box').forEach(box => {
+            box.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const tip = this.querySelector('.teacher-tip');
+                tip.classList.toggle('show-tip');
+            });
+        });
+        
+        // 全局点击隐藏点拨
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.question-box')) {
+                document.querySelectorAll('.teacher-tip').forEach(tip => {
+                    tip.classList.remove('show-tip');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
